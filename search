@@ -1,0 +1,15 @@
+from bs4 import BeautifulSoup
+from selenium import webdriver
+x = input("search something")
+url = "https://www.duckduckgo.com/?q=" + x
+driver = webdriver.Chrome('/usr/bin/chromedriver')
+driver.get(url)
+soup = BeautifulSoup(driver.page_source, "html.parser")
+for i in soup.find_all('div', {'class': 'post-info-wrap'}):
+    link = i.find('a', href=True)
+    if link is None:
+    continue
+    print(link['href'])
+    print BeautifulSoup(definition).find('p').text
+
+
