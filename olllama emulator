@@ -1,0 +1,11 @@
+import  requests
+import json
+url = "https://localhost;11434/api/generate"
+headers = {
+    "Content-Type" : "application/jasn"
+}
+
+data = {
+    "model" : "llama2"
+    "prompt" : 
+}
